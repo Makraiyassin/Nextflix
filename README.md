@@ -22,7 +22,7 @@ The team:
   
 # Where?
 
-[Click here](https://makraiyassin.github.io/Projet-Nextflix/)
+[Click here](https://makraiyassin.github.io/Nextflix/home.html)
 
 # Briefing for this project:
 
