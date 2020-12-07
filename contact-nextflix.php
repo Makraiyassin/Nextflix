@@ -58,7 +58,7 @@
     <div class="container">
         <h1>Contactez-nous</h1>
 
-        <form method="POST" action="http://localhost/0-Projet-nextflix/contact-nextflix.php">
+        <form method="POST" action="">
             <div class="form-group">
                 <label for="name">Nom:</label>
                 <input name="name" type="text" class="form-control" id="name">
