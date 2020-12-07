@@ -9,6 +9,7 @@
 <body>
 
 
+
     <div class="wrapper">
         <div class="title">
             login
@@ -24,41 +25,12 @@
                 <input name="pass" type="password" class="input" id="pass">
             </div>
             <input type="submit" name="login" value="login">
-
-            <?php 
-
-                if(isset($_POST['login'])){
-
-                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root',''); // connection 
-
-                    $lmail = $_POST['mail'];
-                    $lpass = $_POST['pass'];
-
-                    if(!empty($lmail) AND !empty($lpass)){
-                        
-                        $q = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-                        $q->execute(['email' => $lmail]);
-                        $result= $q -> fetch();
-
-                        if($result == true){
-                            if(password_verify($lpass, $result["pass"])){
-                                header('Location: http://localhost/Nextflix/home.html');
-                                exit();
-                            }else {
-                                echo "le mot de passe est incorect";
-                            }
-                        }else{
-                            echo "le compte $lmail n'existe pas";
-                        }
-                    }else{
-                        echo "Veuillez remplir tous les champs.";
-                    }
-                }
-
-            ?>
+            <?php include 'includes/login.php';?>
 
         </form>
     </div>
+    
+    
 
     <div class="wrapper">
         <div class="title">
@@ -89,37 +61,9 @@
 
             <input type="submit" name="submit" value="Subscribe" style="width:auto">
 
-            <?php 
+            <?php include 'includes/signin.php'; ?>
 
-                if(isset($_POST['submit'])){
-
-                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root',''); // connection 
-
-                    $lname = $_POST['lname'];
-                    $fname = $_POST['fname'];
-                    $mail = $_POST['email1'];
-
-                    if($_POST['pass1'] == $_POST['pass2']){
-
-                        $options = [
-                            'cost' => 12,
-                        ];
-
-                        $pass = $_POST['pass1'];
-                        $hashpass= password_hash($pass, PASSWORD_BCRYPT , $options);
-                        
-                        
-                        $q = "INSERT INTO users(firstname, lastname, email, pass) VALUES ('$fname','$lname','$mail','$hashpass')";
-                        $r = $pdo->prepare($q);
-                        $r->execute();
-    
-                        echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
-                    }else{
-                        echo "<p>Veuillez remplir correctement tous les champs svp...</p>";
-                    }
-                }
-
-            ?>
+            
         </form>
     </div>
 
