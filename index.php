@@ -9,7 +9,12 @@
 <body>
 
 
+   <div class="logo">
+       <img src="images/logo.png" alt="">
+   </div>
+
     <div class="wrapper">
+        <div class="test">
         <div class="title">
             login
         </div>
@@ -22,14 +27,15 @@
             <div class="input_fild">
                 <label for="">password</label>
                 <input name="pass" type="password" class="input" id="pass">
-            </div>
+        </div>
             <input type="submit" name="login" value="login">
+            
 
             <?php 
 
                 if(isset($_POST['login'])){
 
-                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root',''); // connection 
+                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root','root'); 
 
                     $lmail = $_POST['mail'];
                     $lpass = $_POST['pass'];
@@ -42,7 +48,8 @@
 
                         if($result == true){
                             if(password_verify($lpass, $result["pass"])){
-                                header('Location: http://localhost/0-Projet-nextflix/home.html');
+                                
+                                header('Location: http://localhost:8888/Nextflix/home.html');
                                 exit();
                             }else {
                                 echo "le mot de passe est incorect";
@@ -58,70 +65,11 @@
             ?>
 
         </form>
-    </div>
-
-    <div class="wrapper">
-        <div class="title">
-            Subscribe
         </div>
-
-        <form class="form" method="POST" action="">
-            <div class="input_fild">
-                <label for="fname">first name</label>
-                <input name="fname" type="text" class="input" id="fname">
-            </div>
-            <div class="input_fild">
-                <label for="lname">last name</label>
-                <input name="lname" type="text" class="input" id="lname">
-            </div>
-            <div class="input_fild">
-                <label for="email1">email address</label>
-                <input name="email1" type="email1" class="input" id="email1">
-            </div>
-            <div class="input_fild">
-                <label for="pass1">password</label>
-                <input name="pass1" type="password" class="input" id="pass1">
-            </div>
-            <div class="input_fild">
-                <label for="pass2">confirm password</label>
-                <input name="pass2" type="password" class="input" id="pass2">
-            </div>
-
-            <input type="submit" name="submit" value="Subscribe" style="width:auto">
-
-            <?php 
-
-                if(isset($_POST['submit'])){
-
-                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root',''); // connection 
-
-                    $lname = $_POST['lname'];
-                    $fname = $_POST['fname'];
-                    $mail = $_POST['email1'];
-
-                    if($_POST['pass1'] == $_POST['pass2']){
-
-                        $options = [
-                            'cost' => 12,
-                        ];
-
-                        $pass = $_POST['pass1'];
-                        $hashpass= password_hash($pass, PASSWORD_BCRYPT , $options);
-                        
-                        
-                        $q = "INSERT INTO users(firstname, lastname, email, pass) VALUES ('$fname','$lname','$mail','$hashpass')";
-                        $r = $pdo->prepare($q);
-                        $r->execute();
-    
-                        echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
-                    }else{
-                        echo "<p>Veuillez remplir correctement tous les champs svp...</p>";
-                    }
-                }
-
-            ?>
-        </form>
     </div>
+    
+
+   
 
 </body>
 </html>
