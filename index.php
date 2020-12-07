@@ -9,8 +9,12 @@
 <body>
 
 
+   <div class="logo">
+       <img src="images/logo.png" alt="">
+   </div>
 
     <div class="wrapper">
+        <div class="test">
         <div class="title">
             login
         </div>
@@ -23,7 +27,7 @@
             <div class="input_fild">
                 <label for="">password</label>
                 <input name="pass" type="password" class="input" id="pass">
-            </div>
+        </div>
             <input type="submit" name="login" value="login">
             <?php include 'includes/login.php';?>
 
