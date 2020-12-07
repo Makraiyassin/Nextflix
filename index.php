@@ -42,7 +42,7 @@
 
                         if($result == true){
                             if(password_verify($lpass, $result["pass"])){
-                                header('Location: http://localhost/0-Projet-nextflix/home.html');
+                                header('Location: http://localhost/Nextflix/home.html');
                                 exit();
                             }else {
                                 echo "le mot de passe est incorect";
