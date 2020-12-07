@@ -1,0 +1,26 @@
+
+body{
+  color: rgb(235, 235, 235);
+}
+
+h1{
+  padding-top: 1%;
+}
+
+footer{
+  background-color:  #414141;
+}
+
+.posters img:hover{
+  transform : scale(1.5);
+  transition: 1s;
+}
+
+.posters{
+  text-align: justify;
+  font-family: 'Oswald', sans-serif;
+  padding-left: 0.5%;
+  background-color: #272727;
+  padding-bottom: 1%
+}
+
