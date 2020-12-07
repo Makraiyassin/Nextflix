@@ -26,6 +26,7 @@
             </div>
             <input type="submit" name="login" value="login">
             <?php include 'includes/login.php';?>
+
         </form>
     </div>
     
