@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         $options = [
             'cost' => 12,
         ];
-
+        
         
         $hashpass= password_hash($pass1, PASSWORD_BCRYPT , $options);
 

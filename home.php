@@ -1,3 +1,16 @@
+<?php session_start();
+$login="index.php";
+$subscribe="signup.php";
+$msg = "";
+$name = $_SESSION['firstname'];
+if ($name!= ""){$msg = '<li class="nav-item"><a class="nav-link text-danger disabled" href="#">Welcome '.$name.'</a></li>';
+    
+}else {
+    $msg = '<li class="nav-item"><a class="nav-link text-danger" href="'.$login.'">Log in</a></li><li class="nav-item"><a class="nav-link text-danger" href="'.$subscribe.'">Subscribe</a></li>';
+    //  "<a href='$login'>Log in</a>"." or "."<a href='$subscribe'>Sign up</a>"."</p>";   
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +31,8 @@
 
 </head>
 
+
+
 <body>
     <!--navbar start-->
     <nav class="navbar navbar-expand-lg  navbar-expand-sm navbar-dark" style="background-color: #2d2d2d;">
@@ -37,22 +52,28 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="home.html">Movies</a>
-                        <a class="dropdown-item" href="Series.html">Series</a>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact-nextflix.php">contact</a>
-                        </li>
+                        <a class="dropdown-item" href="Series.html">Series</a>  
                     </div>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="contact-nextflix.php">contact</a>
+                </li>
+                <?php echo $msg; ?>
+                
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button id="goSearch" type="button" class="btn btn-danger" style="background-color: #761313;">search</button>
+                <div class="btn-toolbar">
+                    <button id="goSearch" type="button" class="btn btn-danger" style="background-color: #761313;">search</button>
+                </div>
+                <div class="btn-toolbar">
+                    <a class="btn btn-danger" href="logout.php" role="button" style="background-color: #761313; margin-left: 9px;">log out</a>
+                </div>
             </form>
         </div>
     </nav>
     <!--navbar end-->
+   
     <div id="div0" class="posters">
     </div>
     <!--slider start-->
