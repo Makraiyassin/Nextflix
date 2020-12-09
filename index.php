@@ -22,15 +22,15 @@
             
             <div class="input_fild">
                 <label for="mail">email address</label>
-                <input name="mail" type="email" class="input" id="mail" required>
+                <input name="mail" type="email" class="input" id="mail">
             </div>
             <div class="input_fild">
                 <label for="">password</label>
-                <input name="pass" type="password" class="input" id="pass" required>
+                <input name="pass" type="password" class="input" id="pass" >
             </div>
             <input type="submit" name="login" value="Login">
             
-            <form action="/signup.php">
+            <form action="signup.php">
                     <input type="submit" value="Sign up" />
             </form>
             <?php include 'includes/login.php';?>

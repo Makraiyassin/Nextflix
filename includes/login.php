@@ -34,7 +34,7 @@ if(isset($_POST['login']))
             if(password_verify($pass, $result["pass"])){
                 session_start();
                 $_SESSION['firstname']=$result['firstname'];
-                header('Location: http://localhost:8888/home.php');
+                header('Location: http://localhost:8888/Nextflix/home.php');
                 exit();
             }else {
                 echo "le mot de passe est incorect";
