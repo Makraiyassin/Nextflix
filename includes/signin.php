@@ -1,9 +1,9 @@
 
 <?php 
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 if(isset($_POST['submit'])){
 
@@ -24,15 +24,16 @@ if(isset($_POST['submit'])){
         global $db;
         
         
-        $q = $db->prepare("INSERT INTO users(firstname, lastname, email, pass) VALUES ('$fname','$lname','$email1','$hashpass')");
+        $q = $db->prepare("INSERT INTO users (firstname, lastname, email, pass) VALUES ('$fname','$lname','$email1','$hashpass')");
         $q->execute([
-            'firstname'->$fname,
-            'lastname'->$lname,
-            'email'->$email1,
-            'pass'->$hashpass
+            'firstname'=>$fname,
+            'lastname'=>$lname,
+            'email'=>$email1,
+            'pass'=>$hashpass
             ]);
 
-        echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
+        // echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
+        header('Location: http://localhost:8888/index.php');
     }else{
         echo "<p>Veuillez remplir correctement tous les champs svp...</p>";
     }
