@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,64 +18,31 @@
             SIGN UP
         </div>
 
-        <form class="form" method="POST" action="">
+        <form class="form" method="POST" action="./index.php">
             <div class="input_fild">
                 <label for="fname">first name</label>
-                <input name="fname" type="text" class="input" id="fname">
+                <input name="fname" type="text" class="input" id="fname" required>
             </div>
             <div class="input_fild">
                 <label for="lname">last name</label>
-                <input name="lname" type="text" class="input" id="lname">
+                <input name="lname" type="text" class="input" id="lname" required>
             </div>
             <div class="input_fild">
                 <label for="email1">email address</label>
-                <input name="email1" type="email1" class="input" id="email1">
+                <input name="email1" type="email1" class="input" id="email1" required>
             </div>
             <div class="input_fild">
                 <label for="pass1">password</label>
-                <input name="pass1" type="password" class="input" id="pass1">
+                <input name="pass1" type="password" class="input" id="pass1" required>
             </div>
             <div class="input_fild">
                 <label for="pass2">confirm password</label>
-                <input name="pass2" type="password" class="input" id="pass2">
+                <input name="pass2" type="password" class="input" id="pass2" required>
             </div>
 
             <input type="submit" name="submit" value="Subscribe" style="width:auto">
 
-            <?php 
-
-                if(isset($_POST['submit'])){
-
-                    $pdo = new PDO('mysql:host=localhost;dbname=nextflix','root','root'); 
-
-                    $lname = $_POST['lname'];
-                    $fname = $_POST['fname'];
-                    $mail = $_POST['email1'];
-
-                    if($_POST['pass1'] == $_POST['pass2']){
-                        
-                        
-                        $options = [
-                            'cost' => 12,
-                        ];
-
-                        $pass = $_POST['pass1'];
-                        $hashpass= password_hash($pass, PASSWORD_BCRYPT , $options);
-                        
-                        
-                        $q = "INSERT INTO users(firstname, lastname, email, pass) VALUES ('$fname','$lname','$mail','$hashpass')";
-                        $r = $pdo->prepare($q);
-                        $r->execute();
-    
-                        echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
-                        header('Location: http://localhost:8888/Nextflix/index.php');
-                    }else{
-                        echo "<p>Veuillez remplir correctement tous les champs svp...</p>";
-                        
-                    }
-                }
-
-            ?>
+            <?php include 'includes/signin.php'; ?>
         </form>
     </div>
     </body>

@@ -1,54 +1,42 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
 }
 
-
-
-body{
+body {
     /* background-color: #272727; */
     /* padding: 10 10px; */
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.1)), url("../images/backgroundMovies.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/backgroundMovies.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
+.logo {
+    width: 20%;
+}
 
- .logo{
-     width: 20%;
- }  
+img {
+    width: 120px;
+}
 
- img{
-     width: 120px;
- }
-    
-
-
-.wrapper{
+.wrapper {
     max-width: 500px;
     width: 100%;
     background: #fff;
-    margin: 10% auto;
+    margin: auto;
     padding: 30px;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
-   
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
 }
 
 .logo {
     display: flex;
     margin-left: 3%;
-   
-
 }
 
-
-
-.wrapper .title{
+.wrapper .title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -57,31 +45,30 @@ body{
     text-transform: uppercase;
 }
 
-.wrapper .form{
+.wrapper .form {
     width: 100%;
 }
 
-.wrapper .form .input_fild{
+.wrapper .form .input_fild {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 
-.wrapper .form .input_fild label{
+.wrapper .form .input_fild label {
     width: 200px;
     color: gray;
     margin-right: 10px;
     font-size: 14px;
-    
 }
 
-
-#textArea{
+#textArea {
     resize: none;
     height: 120px;
 }
+
 .wrapper .form .input_fild .input,
-.wrapper .form .input_fild .textarea{
+.wrapper .form .input_fild .textarea {
     width: 100%;
     outline: none;
     border: 1px solid #d5dbd9;
@@ -91,9 +78,7 @@ body{
     transition: all 0.3s ease;
 }
 
-
-
-select{
+select {
     border: 1px solid gray;
     height: 100%;
     width: 100%;
@@ -101,8 +86,8 @@ select{
     border-radius: 3px;
     outline: none;
 }
-    
-select::before{
+
+select::before {
     content: "";
     position: absolute;
     top: 12px;
@@ -111,11 +96,11 @@ select::before{
     border-color: red;
 }
 
-.wrapper .form .input_fild .input:focus{
+.wrapper .form .input_fild .input:focus {
     border: 1px solid rgb(136, 44, 33)
-}  
+}
 
-.wrapper .form .input_fild .check{
+.wrapper .form .input_fild .check {
     width: 15px;
     height: 15px;
     position: relative;
@@ -124,21 +109,15 @@ select::before{
     color: red;
 }
 
-
-input{
+input {
     border-radius: 5px;
     border: 1px solid gray;
     height: 10%;
     width: 13%;
     margin-top: 10px;
 }
-input:hover{
+
+input:hover {
     border-color: #761313;
     color: #761313;
 }
-
-
-
-
-
-
