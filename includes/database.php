@@ -1,7 +1,7 @@
 <?php
     include("secretInfo.php");
     $userData = userData;
-    $userPass = passData;
+    $userPass = "";
     define('HOST','localhost'); 
     define('DATABASE','nextflix'); 
 
