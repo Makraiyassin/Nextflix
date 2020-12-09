@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
             SIGN UP
         </div>
 
-        <form class="form" method="POST" action="./index.php">
+        <form class="form" method="POST" action="">
             <div class="input_fild">
                 <label for="fname">first name</label>
                 <input name="fname" type="text" class="input" id="fname" required>

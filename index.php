@@ -26,13 +26,10 @@
             </div>
             <div class="input_fild">
                 <label for="">password</label>
-                <input name="pass" type="password" class="input" id="pass" >
+                <input name="pass" type="password" class="input" id="pass">
             </div>
             <input type="submit" name="login" value="Login">
-            
-            <form action="signup.php">
-                    <input type="submit" value="Sign up" />
-            </form>
+            <a href="signup.php" style="margin-left: 20%">Create an account</a>
             <?php include 'includes/login.php';?>
         </form>
     </div>
