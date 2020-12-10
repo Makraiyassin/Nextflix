@@ -23,7 +23,9 @@ The team:
 # Where?
 
 [Web site](http://nextflix-2.rf.gd/)
-[Source code](view-source:http://nextflix-2.rf.gd/)
+
+[Source code](http://view-source:http://nextflix-2.rf.gd/)
+
 [Github folder](https://github.com/Makraiyassin/Nextflix/)
 
 # Briefing for this project:
