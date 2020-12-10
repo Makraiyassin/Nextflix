@@ -22,7 +22,7 @@ The team:
   
 # Where?
 
-[Click here](nextflix-2.rf.gd)
+[Click here](http://nextflix-2.rf.gd/)
 
 # Briefing for this project:
 
