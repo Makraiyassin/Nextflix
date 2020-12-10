@@ -29,7 +29,7 @@ session_destroy();
                 <p>If you wanna you can log in at following link:  </p><br>              
             </div>
             <div class="input_fild">               
-                <form action="/index.php">
+                <form action="login.php">
                     <input type="submit" value="Log in" />
                 </form>
             </div>

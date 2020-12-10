@@ -1,3 +1,23 @@
+<?php session_start();
+$login="login.php";
+$subscribe="subscribe.php";
+$msg = "";
+if (isset($_SESSION['firstname'])) {
+    $name = $_SESSION['firstname'];
+
+    $msg = '<li class="nav-item"><a class="nav-link text-danger disabled" href="#">Welcome '.$name.'</a></li>';
+}else {
+    header("location: login.php");
+    // $msg = '<li class="nav-item"><a class="nav-link text-danger" href="'.$login.'">Log in</a></li><li class="nav-item"><a class="nav-link text-danger" href="'.$subscribe.'">Subscribe</a></li>';
+}
+
+if(isset($_POST['logout'])){ //logging out
+    session_destroy();
+    header("location: logout.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,37 +42,42 @@
 <body>
 
     <nav class="navbar navbar-expand-lg  navbar-expand-sm navbar-dark" style="background-color: #2d2d2d;">
-        <a class="navbar-brand" href="#" ><img src="./images/logo.png" href="#" alt="Nextflix logo"></a>
+        <a class="navbar-brand" href="#"><img src="./images/logo.png" href="#" alt="Nextflix logo"></a>
         <button class="navbar-toggler" type="button" class="btn btn-danger" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="home.html">Movies</a>
-                        <a class="dropdown-item" href="series.html">Series</a>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact-nextflix.php">contact</a>
-                        </li>
+                        <a class="dropdown-item" href="index.php">Movies</a>
+                        <a class="dropdown-item" href="series.php">Series</a>  
                     </div>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php">contact</a>
+                </li>
+                <?php echo $msg; ?>
+                    
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form method="POST" class="form-inline my-2 my-lg-0">
                 <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button id="goSearch" type="button" class="btn btn-danger" style="background-color: #761313;">search</button>
+                <div class="btn-toolbar">
+                    <button id="goSearch" type="button" class="btn btn-danger" style="background-color: #761313;">search</button>
+                </div>
+                <div class="btn-toolbar">
+                    <button name="logout" type="submit" class="btn btn-danger" style="background-color: #761313; margin-left: 9px;">log out</button>
+                </div>
             </form>
         </div>
-    </nav>  
+    </nav>
 
 
     <div class="container">

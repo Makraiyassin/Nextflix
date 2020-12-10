@@ -32,8 +32,8 @@ if(isset($_POST['submit'])){
             'pass'=>$hashpass
             ]);
 
-        // echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
-        header('Location: http://localhost:8888/index.php');
+        echo "<p>Votre compte a bien été créer, vous pouvez vous connecter.</p>";
+        // header('Location: http://localhost:8888/Nextflix/login.php');
     }else{
         echo "<p>Veuillez remplir correctement tous les champs svp...</p>";
     }
