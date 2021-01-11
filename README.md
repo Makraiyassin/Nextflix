@@ -22,7 +22,7 @@ The team:
   
 # Where?
 
-[Web site](http://nextflix-2.rf.gd/)
+[Web site](http://nextflixx.rf.gd/login.php)
 
 [Github folder & Source code](https://github.com/Makraiyassin/Nextflix/)
 
