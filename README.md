@@ -30,5 +30,5 @@ The team:
 
 [Click here](https://github.com/becodeorg/BXL-Johnson-5.25/blob/master/2.The-Hill/PHP/getflix_project.md)
 
-![gif](https://github.com/Makraiyassin/Projet-Nextflix/blob/main/images/team.gif)
+![gif](https://github.com/Makraiyassin/Nextflix/blob/main/images/team.gif)
 
